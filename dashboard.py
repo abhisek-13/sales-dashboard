@@ -16,8 +16,10 @@ st.title(" :bar_chart: Sample Superstore EDA")
 st.markdown('<style>div.block-container{padding-top:2rem;}</style>',unsafe_allow_html=True)
 
 #Flie Upload and data loading
-
-fl=st.file_uploader(":file_folder: Upload a file ",type=(["csv","txt","xlsv","xls"]))  #:file_folder: is for the folder emoji
+fl = None
+with st.sidebar:
+    with st.expander(":file_folder: Upload a file "):
+        fl=st.file_uploader("",type=(["csv","txt","xlsv","xls"]))  #:file_folder: is for the folder emoji
 if fl is not None:
     filename=fl.name
     st.write(filename)
